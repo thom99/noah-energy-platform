@@ -202,8 +202,8 @@ export function AssetDashboard({
               </h2>
 
               <p className="mt-2 text-sm leading-6 text-white/60">
-                Select the operating mode for this battery.
-                This prototype only updates local UI state.
+                Select a simulated operating mode.
+                Changes only affect this prototype session and are not sent to a control system.
               </p>
 
               <div className="mt-6 grid gap-3">
