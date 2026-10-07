@@ -2,6 +2,7 @@
 
 import {
   CartesianGrid,
+  Legend,
   Line,
   LineChart,
   ResponsiveContainer,
@@ -33,40 +34,52 @@ export function BatteryChart({
             strokeDasharray="3 3"
             stroke="#e5e5e5"
           />
-        <YAxis
-          yAxisId="soc"
-          axisLine={false}
-          tickLine={false}
-          unit="%"
-        />
 
-        <YAxis
-          yAxisId="temperature"
-          orientation="right"
-          axisLine={false}
-          tickLine={false}
-          unit="°C"
-        />
+          <XAxis
+            dataKey="time"
+            axisLine={false}
+            tickLine={false}
+            tick={{ fontSize: 12, fill: "#737373" }}
+          />
 
-        <Line
-          yAxisId="soc"
-          type="monotone"
-          dataKey="stateOfCharge"
-          name="State of Charge"
-          stroke="#7ca91f"
-          strokeWidth={3}
-          dot={false}
-        />
+          <YAxis
+            yAxisId="soc"
+            axisLine={false}
+            tickLine={false}
+            unit="%"
+          />
 
-        <Line
-          yAxisId="temperature"
-          type="monotone"
-          dataKey="temperatureC"
-          name="Temperature"
-          stroke="#d97706"
-          strokeWidth={2}
-          dot={false}
-        />
+          <YAxis
+            yAxisId="temperature"
+            orientation="right"
+            axisLine={false}
+            tickLine={false}
+            unit="°C"
+          />
+
+          <Tooltip />
+
+          <Legend />
+
+          <Line
+            yAxisId="soc"
+            type="monotone"
+            dataKey="stateOfCharge"
+            name="State of Charge"
+            stroke="#7ca91f"
+            strokeWidth={3}
+            dot={false}
+          />
+
+          <Line
+            yAxisId="temperature"
+            type="monotone"
+            dataKey="temperatureC"
+            name="Temperature"
+            stroke="#d97706"
+            strokeWidth={2}
+            dot={false}
+          />
         </LineChart>
       </ResponsiveContainer>
     </div>
