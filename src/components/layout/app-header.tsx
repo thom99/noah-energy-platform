@@ -29,7 +29,7 @@ export function AppHeader() {
           <div className="h-2 w-2 rounded-full bg-emerald-600" />
 
           <span className="text-xs font-medium text-[#303630]">
-            System online
+            Platform online
           </span>
         </div>
       </div>

@@ -33,37 +33,40 @@ export function BatteryChart({
             strokeDasharray="3 3"
             stroke="#e5e5e5"
           />
+        <YAxis
+          yAxisId="soc"
+          axisLine={false}
+          tickLine={false}
+          unit="%"
+        />
 
-          <XAxis
-            dataKey="time"
-            axisLine={false}
-            tickLine={false}
-          />
+        <YAxis
+          yAxisId="temperature"
+          orientation="right"
+          axisLine={false}
+          tickLine={false}
+          unit="°C"
+        />
 
-          <YAxis
-            axisLine={false}
-            tickLine={false}
-          />
+        <Line
+          yAxisId="soc"
+          type="monotone"
+          dataKey="stateOfCharge"
+          name="State of Charge"
+          stroke="#7ca91f"
+          strokeWidth={3}
+          dot={false}
+        />
 
-          <Tooltip />
-
-          <Line
-            type="monotone"
-            dataKey="stateOfCharge"
-            name="State of Charge"
-            stroke="#7ca91f"
-            strokeWidth={3}
-            dot={false}
-          />
-
-          <Line
-            type="monotone"
-            dataKey="temperatureC"
-            name="Temperature"
-            stroke="#d97706"
-            strokeWidth={2}
-            dot={false}
-          />
+        <Line
+          yAxisId="temperature"
+          type="monotone"
+          dataKey="temperatureC"
+          name="Temperature"
+          stroke="#d97706"
+          strokeWidth={2}
+          dot={false}
+        />
         </LineChart>
       </ResponsiveContainer>
     </div>

@@ -2,6 +2,7 @@
 
 import {
   CartesianGrid,
+  Legend,
   Line,
   LineChart,
   ResponsiveContainer,
@@ -52,7 +53,7 @@ export function EnergyOverviewChart({
             axisLine={false}
             tickLine={false}
             tick={{ fontSize: 12, fill: "#737373" }}
-            unit=" kW"
+            unit="kW"
           />
 
           <Tooltip
@@ -61,6 +62,8 @@ export function EnergyOverviewChart({
               border: "1px solid #e5e5e5",
             }}
           />
+
+          <Legend/>
 
           <Line
             type="monotone"
