@@ -75,9 +75,6 @@ export function PortfolioDashboard({
             </p>
           </div>
 
-          <div className="rounded-full border border-neutral-300 bg-white px-4 py-2 text-sm text-neutral-600 shadow-sm">
-            Last updated just now
-          </div>
         </header>
 
         <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
