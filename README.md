@@ -8,7 +8,7 @@ Nova is a concept for an operational energy-management interface designed to hel
 
 The prototype explores the following information hierarchy:
 
-Portfolio → Location → Asset → Historical / Operational Detail
+**Portfolio → Location → Asset → Historical / Operational Detail**
 
 ## Prototype scope
 
@@ -42,7 +42,7 @@ Built with:
 
 The application uses the Next.js App Router.
 
-Server Components are used for data retrieval and page composition, while Client Components are introduced only where browser-side interaction is required, such as charts, forms and operating-mode controls.
+Server Components are used for data retrieval and page composition, while Client Components are introduced where browser-side interaction is required, such as charts, forms and operating-mode controls.
 
 ## Architecture
 
@@ -58,3 +58,37 @@ Server pages
 Reusable UI components
    ↓
 Client interactions
+```
+
+This allows the mocked data source to later be replaced by a REST, GraphQL or another backend API without requiring major changes to the presentation layer.
+
+## Routes
+
+```text
+/                         Portfolio overview
+/locations/[id]           Facility detail
+/assets/[id]              Asset detail
+```
+
+## Design approach
+
+The interface is designed around progressive disclosure of operational information.
+
+At portfolio level, users can quickly identify overall system health and facilities requiring attention.
+
+At facility level, users can inspect energy performance, alerts and connected equipment.
+
+At asset level, users can inspect operational metrics, historical performance and maintenance information.
+
+## Notes
+
+This prototype is intentionally limited in scope.
+
+The goal is not to represent the final Nova product, but to demonstrate an approach to:
+
+- information architecture
+- frontend architecture
+- operational monitoring
+- data visualization
+- reusable UI components
+- interaction design for technical systems
