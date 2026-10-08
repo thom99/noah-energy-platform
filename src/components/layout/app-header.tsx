@@ -12,7 +12,7 @@ export function AppHeader() {
 
           <div>
             <p className="font-semibold leading-none text-[#1f261f]">
-              Nova
+              Noah
             </p>
 
             <p className="mt-1 text-xs text-[#5f665f]">

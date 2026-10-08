@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nova Energy Operations",
+  title: "Noah Energy Operations",
   description:
     "Interactive concept for monitoring and managing distributed energy systems.",
 };

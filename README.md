@@ -1,10 +1,10 @@
-# Nova Energy Operations Platform
+# Noah Energy Operations Platform
 
 Interactive frontend concept created as part of the interview process for Van Gooi.
 
 ## Overview
 
-Nova is a concept for an operational energy-management interface designed to help users monitor facilities, understand system performance and progressively drill down from portfolio-level information to individual assets.
+Noah is a concept for an operational energy-management interface designed to help users monitor facilities, understand system performance and progressively drill down from portfolio-level information to individual assets.
 
 The prototype explores the following information hierarchy:
 
@@ -84,7 +84,7 @@ At asset level, users can inspect operational metrics, historical performance an
 
 This prototype is intentionally limited in scope.
 
-The goal is not to represent the final Nova product, but to demonstrate an approach to:
+The goal is not to represent the final Noah product, but to demonstrate an approach to:
 
 - information architecture
 - frontend architecture
