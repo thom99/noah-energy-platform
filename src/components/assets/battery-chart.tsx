@@ -31,15 +31,15 @@ export function BatteryChart({
         <LineChart data={data}>
           <CartesianGrid
             vertical={false}
-            strokeDasharray="3 3"
-            stroke="#e5e5e5"
+            strokeDasharray="3 4"
+            stroke="#e8e2d7"
           />
 
           <XAxis
             dataKey="time"
             axisLine={false}
             tickLine={false}
-            tick={{ fontSize: 12, fill: "#737373" }}
+            tick={{ fontSize: 12, fill: "#85765f" }}
           />
 
           <YAxis
@@ -66,7 +66,7 @@ export function BatteryChart({
             type="monotone"
             dataKey="stateOfCharge"
             name="State of Charge"
-            stroke="#7ca91f"
+            stroke="#d9a92f"
             strokeWidth={3}
             dot={false}
           />
@@ -76,7 +76,8 @@ export function BatteryChart({
             type="monotone"
             dataKey="temperatureC"
             name="Temperature"
-            stroke="#d97706"
+            stroke="#76604b"
+            strokeDasharray="5 5"
             strokeWidth={2}
             dot={false}
           />

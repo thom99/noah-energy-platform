@@ -99,42 +99,42 @@ export function AssetDashboard({
   }
 
   return (
-    <main className="min-h-screen bg-[#f5f3ee] text-[#1d211c]">
-      <div className="mx-auto max-w-[1500px] px-6 py-8 lg:px-10">
+    <main className="noah-dashboard asset-dashboard min-h-screen bg-[#f7f5ef] text-[#302b23]">
+      <div className="dashboard-content mx-auto max-w-[1500px] px-5 py-8 sm:px-6 lg:px-10">
         <Link
           href={`/locations/${asset.locationId}`}
-          className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-neutral-500 transition hover:text-neutral-900"
+          className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-[#85765f] transition hover:text-[#302b23]"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to facility
         </Link>
 
-        <header className="mb-10 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+        <header className="page-header mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <div className="mb-3 flex items-center gap-2 text-sm font-medium uppercase text-neutral-500">
+            <div className="page-eyebrow mb-3 flex items-center gap-2 text-sm font-medium uppercase text-[#85765f]">
               <Activity className="h-4 w-4" />
               {asset.type.replace("-", " ")}
             </div>
 
             <div className="flex flex-wrap items-center gap-4">
-              <h1 className="text-4xl font-semibold tracking-tight lg:text-5xl">
+              <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[42px]">
                 {asset.name}
               </h1>
 
               <StatusBadge status={asset.status} />
             </div>
 
-            <p className="mt-3 text-neutral-600">
+            <p className="mt-3 text-[#756958]">
               Operational metrics, historical performance and maintenance notes.
             </p>
           </div>
 
-          <p className="text-sm text-neutral-500">
+          <p className="text-sm text-[#85765f]">
             Asset ID: {asset.id}
           </p>
         </header>
 
-        <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <section className="metric-grid grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           <MetricCard
             label="Current power"
             value={`${asset.powerKw} kW`}
@@ -177,13 +177,13 @@ export function AssetDashboard({
         </section>
 
         {battery && (
-          <section className="mt-8 grid gap-6 xl:grid-cols-[1.7fr_1fr]">
-            <div className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
-              <p className="text-sm font-medium text-neutral-500">
+          <section className="performance-grid mt-8 grid gap-6 xl:grid-cols-[1.7fr_1fr]">
+            <div className="dashboard-panel rounded-xl border border-[#e7e2d8] bg-[#fffefa] p-6 shadow-sm">
+              <p className="text-sm font-medium text-[#85765f]">
                 HISTORICAL PERFORMANCE
               </p>
 
-              <h2 className="mt-1 text-2xl font-semibold">
+              <h2 className="mt-1 text-xl font-semibold tracking-tight">
                 Battery performance
               </h2>
 
@@ -192,16 +192,16 @@ export function AssetDashboard({
               </div>
             </div>
 
-            <div className="rounded-3xl bg-[#20261f] p-6 text-white shadow-sm">
-              <p className="text-sm font-medium text-white/60">
+            <div className="system-panel rounded-xl bg-[#493521] p-6 text-white shadow-sm">
+              <p className="text-sm font-medium text-[#d4c5af]">
                 OPERATING MODE
               </p>
 
-              <h2 className="mt-1 text-2xl font-semibold">
+              <h2 className="mt-1 text-xl font-semibold tracking-tight">
                 Control strategy
               </h2>
 
-              <p className="mt-2 text-sm leading-6 text-white/60">
+              <p className="mt-2 text-sm leading-6 text-[#d4c5af]">
                 Select a simulated operating mode.
                 Changes only affect this prototype session and are not sent to a control system.
               </p>
@@ -219,10 +219,10 @@ export function AssetDashboard({
                     key={option}
                     type="button"
                     onClick={() => setMode(option)}
-                    className={`rounded-2xl border px-4 py-3 text-left capitalize transition ${
+                    className={`rounded-lg border px-4 py-3 text-left capitalize transition ${
                       mode === option
-                        ? "border-lime-300 bg-lime-300 text-neutral-950"
-                        : "border-white/10 bg-white/5 text-white hover:bg-white/10"
+                        ? "border-[#f3c65a] bg-[#f3c65a] text-[#302b23]"
+                        : "border-white/10 bg-[#fffefa]/5 text-white hover:bg-[#fffefa]/10"
                     }`}
                   >
                     {option}
@@ -231,7 +231,7 @@ export function AssetDashboard({
               </div>
 
               <div className="mt-6 border-t border-white/10 pt-5">
-                <p className="text-xs uppercase text-white/40">
+                <p className="text-xs uppercase text-[#baa68b]">
                   Current selection
                 </p>
 
@@ -244,41 +244,41 @@ export function AssetDashboard({
         )}
 
         <section className="mt-8 grid gap-6 xl:grid-cols-[1fr_1fr]">
-          <div className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
-            <p className="text-sm font-medium text-neutral-500">
+          <div className="dashboard-panel rounded-xl border border-[#e7e2d8] bg-[#fffefa] p-6 shadow-sm">
+            <p className="text-sm font-medium text-[#85765f]">
               MAINTENANCE
             </p>
 
-            <h2 className="mt-1 text-2xl font-semibold">
+            <h2 className="mt-1 text-xl font-semibold tracking-tight">
               Maintenance notes
             </h2>
 
             <div className="mt-6 space-y-4">
               {notes.length === 0 ? (
-                <p className="text-sm text-neutral-500">
+                <p className="text-sm text-[#85765f]">
                   No maintenance notes yet.
                 </p>
               ) : (
                 notes.map((note) => (
                   <article
                     key={note.id}
-                    className="rounded-2xl border border-neutral-200 p-4"
+                    className="rounded-lg border border-[#e7e2d8] p-4"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <h3 className="font-semibold">
                         {note.title}
                       </h3>
 
-                      <span className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-medium capitalize text-neutral-600">
+                      <span className="rounded-full bg-[#f2ebdc] px-2.5 py-1 text-xs font-medium capitalize text-[#756958]">
                         {note.priority}
                       </span>
                     </div>
 
-                    <p className="mt-2 text-sm leading-6 text-neutral-600">
+                    <p className="mt-2 text-sm leading-6 text-[#756958]">
                       {note.description}
                     </p>
 
-                    <p className="mt-3 text-xs text-neutral-400">
+                    <p className="mt-3 text-xs text-[#968367]">
                       {new Date(note.createdAt).toLocaleString("en-GB", {
                         day: "2-digit",
                         month: "short",
@@ -300,12 +300,12 @@ export function AssetDashboard({
             </div>
           </div>
 
-          <div className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
-            <p className="text-sm font-medium text-neutral-500">
+          <div className="dashboard-panel rounded-xl border border-[#e7e2d8] bg-[#fffefa] p-6 shadow-sm">
+            <p className="text-sm font-medium text-[#85765f]">
               NEW MAINTENANCE NOTE
             </p>
 
-            <h2 className="mt-1 text-2xl font-semibold">
+            <h2 className="mt-1 text-xl font-semibold tracking-tight">
               Add a note
             </h2>
 
@@ -329,7 +329,7 @@ export function AssetDashboard({
                   onChange={(event) =>
                     setTitle(event.target.value)
                   }
-                  className="w-full rounded-2xl border border-neutral-300 bg-white px-4 py-3 outline-none transition focus:border-neutral-800"
+                  className="w-full rounded-lg border border-[#d9d0c0] bg-[#fffefa] px-4 py-3 outline-none transition focus:border-neutral-800"
                   placeholder="e.g. Inspect inverter"
                 />
               </div>
@@ -350,7 +350,7 @@ export function AssetDashboard({
                     setDescription(event.target.value)
                   }
                   rows={4}
-                  className="w-full resize-none rounded-2xl border border-neutral-300 bg-white px-4 py-3 outline-none transition focus:border-neutral-800"
+                  className="w-full resize-none rounded-lg border border-[#d9d0c0] bg-[#fffefa] px-4 py-3 outline-none transition focus:border-neutral-800"
                   placeholder="Describe the maintenance task..."
                 />
               </div>
@@ -369,7 +369,7 @@ export function AssetDashboard({
                   onChange={(event) =>
                     setPriority(event.target.value)
                   }
-                  className="w-full rounded-2xl border border-neutral-300 bg-white px-4 py-3 outline-none"
+                  className="w-full rounded-lg border border-[#d9d0c0] bg-[#fffefa] px-4 py-3 outline-none"
                 >
                   <option value="low">Low</option>
                   <option value="medium">Medium</option>
@@ -379,7 +379,7 @@ export function AssetDashboard({
 
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-2xl bg-[#20261f] px-5 py-3 font-medium text-white transition hover:bg-[#30382e]"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#493521] px-5 py-3 font-medium text-white transition hover:bg-[#60472c]"
               >
                 <Save className="h-4 w-4" />
                 Add maintenance note
@@ -402,18 +402,18 @@ function MetricCard({
   icon: React.ReactNode;
 }) {
   return (
-    <div className="rounded-3xl border border-neutral-200 bg-white p-5 shadow-sm">
+    <div className="metric-card rounded-xl border border-[#e7e2d8] bg-[#fffefa] p-5 shadow-sm">
       <div className="flex items-center justify-between">
-        <p className="text-sm font-medium text-neutral-500">
+        <p className="text-sm font-medium text-[#85765f]">
           {label}
         </p>
 
-        <div className="rounded-2xl bg-neutral-100 p-2.5">
+        <div className="rounded-lg bg-[#f2ebdc] p-2.5">
           {icon}
         </div>
       </div>
 
-      <p className="mt-6 text-3xl font-semibold tracking-tight">
+      <p className="mt-5 text-3xl font-semibold tracking-tight tabular-nums">
         {value}
       </p>
     </div>

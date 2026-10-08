@@ -1,10 +1,11 @@
 "use client";
 
 import {
+  Area,
   CartesianGrid,
+  ComposedChart,
   Legend,
   Line,
-  LineChart,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -27,7 +28,7 @@ export function EnergyOverviewChart({
   return (
     <div className="h-[320px] w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart
+        <ComposedChart
           data={data}
           margin={{
             top: 10,
@@ -36,40 +37,48 @@ export function EnergyOverviewChart({
             bottom: 0,
           }}
         >
+          <defs>
+            <linearGradient id="production-fill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#f3c65a" stopOpacity={0.3} />
+              <stop offset="100%" stopColor="#f3c65a" stopOpacity={0.02} />
+            </linearGradient>
+          </defs>
+
           <CartesianGrid
-            strokeDasharray="3 3"
+            strokeDasharray="3 4"
             vertical={false}
-            stroke="#e5e5e5"
+            stroke="#e8e2d7"
           />
 
           <XAxis
             dataKey="time"
             axisLine={false}
             tickLine={false}
-            tick={{ fontSize: 12, fill: "#737373" }}
+            tick={{ fontSize: 12, fill: "#85765f" }}
           />
 
           <YAxis
             axisLine={false}
             tickLine={false}
-            tick={{ fontSize: 12, fill: "#737373" }}
+            tick={{ fontSize: 12, fill: "#85765f" }}
             unit="kW"
           />
 
           <Tooltip
             contentStyle={{
-              borderRadius: 16,
-              border: "1px solid #e5e5e5",
+              borderRadius: 10,
+              border: "1px solid #e7e2d8",
             }}
           />
 
           <Legend/>
 
-          <Line
+          <Area
             type="monotone"
             dataKey="productionKw"
             name="Production"
-            stroke="#7ca91f"
+            stroke="#d9a92f"
+            fill="url(#production-fill)"
             strokeWidth={3}
             dot={false}
           />
@@ -78,11 +87,12 @@ export function EnergyOverviewChart({
             type="monotone"
             dataKey="consumptionKw"
             name="Consumption"
-            stroke="#292d28"
+            stroke="#76604b"
+            strokeDasharray="5 5"
             strokeWidth={3}
             dot={false}
           />
-        </LineChart>
+        </ComposedChart>
       </ResponsiveContainer>
     </div>
   );
